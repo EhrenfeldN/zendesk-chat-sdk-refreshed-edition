@@ -1,43 +1,35 @@
 'use strict';
 let path = require('path');
 let defaultSettings = require('./defaults');
-
-// Additional npm or bower modules to include in builds
-// Add all foreign plugins you may need into this array
-// @example:
-// let npmBase = path.join(__dirname, '../node_modules');
-// let additionalPaths = [ path.join(npmBase, 'react-bootstrap') ];
-let additionalPaths = [];
+const srcPath = path.join(__dirname, '/../src');
+const vendorPath = path.join(__dirname, '/../vendor');
+const dfltPort = 8000;
 
 module.exports = {
-  additionalPaths: additionalPaths,
-  port: defaultSettings.port,
-  debug: true,
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/../dist/assets'),
     filename: 'widget.js',
-    publicPath: defaultSettings.publicPath
+    publicPath: '/assets/'
   },
   devServer: {
     contentBase: './src/',
     historyApiFallback: true,
     hot: true,
-    port: defaultSettings.port,
-    publicPath: defaultSettings.publicPath,
+    publicPath: '/assets/',
     noInfo: false
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
-      actions: `${defaultSettings.srcPath}/actions/`,
-      components: `${defaultSettings.srcPath}/components/`,
-      sources: `${defaultSettings.srcPath}/sources/`,
-      stores: `${defaultSettings.srcPath}/stores/`,
-      styles: `${defaultSettings.srcPath}/styles/`,
-      utils: `${defaultSettings.srcPath}/utils/`,
-      config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
-      vendor: defaultSettings.vendorPath,
+      actions: `${srcPath}/actions/`,
+      components: `${srcPath}/components/`,
+      sources: `${srcPath}/sources/`,
+      stores: `${srcPath}/stores/`,
+      styles: `${srcPath}/styles/`,
+      utils: `${srcPath}/utils/`,
+      config: `${srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
+      vendor: vendorPath,
       React: __dirname + '/../node_modules/react'
     }
   },

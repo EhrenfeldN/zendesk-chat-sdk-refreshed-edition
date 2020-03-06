@@ -29,7 +29,7 @@ class StatusContainer extends Component {
   render() {
     return (
       <div className="status-container">
-        {this.getStatusText(this.props.accountStatus)}
+        <div className="title-tchat">Nouvelle Audi e-tron</div>
         <div className="minimize-button" onClick={this.props.minimizeOnClick}>
           <div className="minimize-button-bar" />
         </div>
@@ -42,5 +42,5 @@ StatusContainer.displayName = 'StatusContainer';
 StatusContainer.propTypes = {
   accountStatus: React.PropTypes.string,
   minimizeOnClick: React.PropTypes.func
-}
+};
 export default StatusContainer;

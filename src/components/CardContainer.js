@@ -39,5 +39,5 @@ CardContainer.propTypes = {
   title: React.PropTypes.string,
   addClass: React.PropTypes.string,
   contentAddClass: React.PropTypes.string
-}
+};
 export default CardContainer;

@@ -201,7 +201,7 @@ function storeHandler(state = DEFAULT_STATE, action) {
 						attachment: action.detail.attachment,
 						source: 'local'
 					}
-				}
+				};
 				break;
 			default:
 				new_action = action;

@@ -134,7 +134,7 @@ class App extends Component {
       name: file.name,
       size: file.size,
       url: window.URL.createObjectURL(file)
-    }
+    };
 
     zChat.sendFile(file, (err) => {
       if (err) {
@@ -264,7 +264,7 @@ class App extends Component {
             hasRating={this.props.data.has_rating}
           />
           <div className={`spinner-container ${this.state.visible && this.props.data.connection !== 'connected' ? 'visible' : ''}`}>
-            <div className="spinner"></div>
+            <div className="spinner"/>
           </div>
           <Input
             addClass={this.props.data.is_chatting ? 'visible' : ''}
@@ -287,7 +287,7 @@ const mapStateToProps = (state) => {
   return {
     data: state
   }
-}
+};
 
 const WrappedApp = connect(
   mapStateToProps
